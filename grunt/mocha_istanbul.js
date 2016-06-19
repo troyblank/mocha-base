@@ -3,7 +3,8 @@ module.exports = {
         src: 'test/**/*.spec.js',
         options: {
             reporter: 'spec',
-            coverage: true
+            coverage: true,
+            reportFormats: ['lcovonly']
         }
     }
 };
