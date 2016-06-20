@@ -1,5 +1,5 @@
 {
-    "name": "@troyblank/mocha-config-troyblank",
+    "name": "@troyblank/mocha-base-troyblank",
     "version": "0.1.0",
     "description": "Shared mocha stuff.",
     "repository": {
