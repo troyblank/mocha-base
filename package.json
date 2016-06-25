@@ -1,6 +1,6 @@
 {
     "name": "@troyblank/mocha-base-troyblank",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Shared mocha stuff.",
     "repository": {
         "type": "git",
@@ -30,7 +30,7 @@
         "chai": "3.5.0",
         "chance": "1.0.3",
         "enzyme": "2.3.0",
-        "istanbul": "1.0.0-alpha.2",
+        "istanbul": "1.1.0-alpha.1",
         "mocha": "2.5.3",
         "react-addons-test-utils": "15.1.0",
         "sinon": "1.17.4"
