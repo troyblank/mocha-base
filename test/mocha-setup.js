@@ -1,4 +1,5 @@
 import { jsdom } from 'jsdom';
+import LocalStorage from 'node-localstorage';
 import styles from './fakes/styles';
 
 // JSDOM
@@ -18,6 +19,10 @@ Object.keys(win).forEach((k) => {
 global.navigator = {
     userAgent: 'node.js'
 };
+
+// LOCALSTORAGE
+global.localStorage = new LocalStorage.LocalStorage('./scratch');
+global.window.localStorage = global.localStorage;
 
 // STYLES
 function css(module) {
