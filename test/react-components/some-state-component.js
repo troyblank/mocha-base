@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class SomeStateComponent extends Component {
     clickHand() {
-        return true;
+        return this;
     }
 
     render() {

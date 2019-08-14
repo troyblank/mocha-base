@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './fakes/styles';
 import { assert } from 'chai';
 import { shallow } from 'enzyme';
+import styles from './fakes/styles';
 import SomeComponent from './react-components/some-component';
 
 describe('React-Component', () => {

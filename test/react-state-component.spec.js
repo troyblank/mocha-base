@@ -1,25 +1,36 @@
-import React from 'react';
-import sinon from 'sinon';
-import { assert } from 'chai';
-import { shallow } from 'enzyme';
-import SomeStateComponent from './react-components/some-state-component';
+const assert = require('assert');
+const sinon = require('sinon');
+const Chance = require('chance');
 
-describe('React-State-Component', () => {
-    it('should render a component', () => {
-        const wrapper = shallow(<SomeStateComponent />);
-        const button = wrapper.find('button');
+const chance = new Chance();
+const selfTest = {
+    callback() {
+        return true;
+    }
+};
 
-        assert.equal(button.length, 1);
+describe('self', () => {
+    it('should be able to assert', () => {
+        assert.equal(true, true);
+        assert.notEqual(false, true);
     });
 
-    it('should handle button click', () => {
-        const SomeStateComponentPrototype = SomeStateComponent.prototype;
-        sinon.spy(SomeStateComponentPrototype, 'clickHand');
+    it('should be able to spy with sinon', () => {
+        const callback = sinon.spy(selfTest, 'callback');
 
-        const wrapper = shallow(<SomeStateComponent />);
+        selfTest.callback();
 
-        wrapper.find('button').simulate('click');
+        assert.equal(callback.called, true);
+    });
 
-        assert.isTrue(SomeStateComponentPrototype.clickHand.calledOnce);
+    it('should be able to test a promise', (done) => {
+        const result = chance.word();
+
+        window.fetch = sinon.stub().returns(Promise.resolve(result));
+
+        window.fetch().then((response) => {
+            assert.equal(response, result);
+            done();
+        });
     });
 });
